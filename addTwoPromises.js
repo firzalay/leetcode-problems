@@ -17,14 +17,20 @@ var addTwoPromises = async function (promise1, promise2) {
 
     // return data1 + data2;
 
-    const data = Promise.all([promise1, promise2]).then((values) => {
-        return values;
-    });
+    //* Solution 2
+    // const data = Promise.all([promise1, promise2]).then((values) => {
+    //     return values;
+    // });
 
-    const [data1, data2] = await data;
+    // const [data1, data2] = await data;
+
+    // return data1 + data2;
+
+    //* Solution 3
+    const data1 = await promise1;
+    const data2 = await promise2;
 
     return data1 + data2;
-    
 
     
     
