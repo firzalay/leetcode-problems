@@ -5,9 +5,14 @@
  * @return {Function}
  */
 var cancellable = function (fn, args, t) {
-    setTimeout(() => {
+    let timeout = setTimeout(() => {
         fn(...args);
     }, t);
+
+
+    return function() {
+         clearTimeout(timeout)
+    }
 };
 
 const result = [];
