@@ -1,3 +1,15 @@
-const isObjectEmpty = (objectName) => {
-    return objectName && Object.keys(objectName).length === 0 && objectName.constructor === Object;
-};
+/**
+ * @param {Object|Array} obj
+ * @return {boolean}
+ */
+var isEmpty = function(obj) {
+    for(const prop in obj) {
+      if (Object.hasOwn(obj, prop)) {
+          return false;
+      } 
+    }  
+    return true
+  };
+  
+console.log(isEmpty({}))
+
