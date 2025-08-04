@@ -1,10 +1,19 @@
-function chunkArr2(arr, size) {
-    if (size <= 0) throw new Error("Chunk size must be a positive integer");
-    return arr.reduce((acc, _, i) => {
-        if (i % size === 0) acc.push(arr.slice(i, i + size));
-        return acc;
-    }, []);
-}
-console.time("reduce");
-console.log(chunkArr2(arr, 2));
-console.timeEnd("reduce");
+/**
+ * @param {Array} arr
+ * @param {number} size
+ * @return {Array}
+ */
+var chunk = function(arr, size) {
+    let defaultArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        defaultArr.push(element)
+    }
+
+    
+    
+};
+
+
+console.log(chunk([1,2,3,4,5], 1));
