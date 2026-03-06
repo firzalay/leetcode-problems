@@ -1,24 +1,23 @@
-var maxProfit = function (prices) {
-    let doneBuying = false;
-    let lowestPrice = 0;
-    let maxProfit = 0;
+function maxProfit(prices) {
+    let maxProfit = 0
+    let minPrice = prices[0];
 
     for (let i = 0; i < prices.length; i++) {
-        let buyPrice = prices[i];
-        doneBuying = true;
-        lowestPrice = buyPrice;
+        if (prices[i] < minPrice) {
+            minPrice = prices[i]
+        } else {
 
-        for (let j = i + 1; j < prices.length; j++) {
-            let sellPrice = prices[j];
-
-            if (doneBuying) {
-                let profit = sellPrice - lowestPrice;
-                if (profit > maxProfit) {
-                    maxProfit = profit;
-                }
-            }
+           maxProfit = prices[i] - minPrice   
+        
+        //    if (profit > maxProfit) {
+        //         maxProfit = profit
+        //    }
         }
     }
+    
 
-    return maxProfit;
-};
+    return maxProfit
+
+}
+
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
