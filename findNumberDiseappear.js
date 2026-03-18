@@ -1,14 +1,13 @@
-const findMissing = (num) => {
-    const missingArr = []
-    const minNum = Math.min(...num); 
-    const maxNum = Math.max(...num); 
+const findMissing = (nums) => {
+    const missingArr = [];
 
-  for(let i=minNum; i<= maxNum; i++) {
-    if(!num.includes(i)) { 
-      missingArr.push(i); 
+    for (let i = 1; i <= nums.length; i++) {
+        if (!nums.includes(i)) {
+            missingArr.push(i);
+        }
     }
-  }
-  return missingArr;
-}
 
-console.log(findMissing([1,15]))
+    return missingArr;
+};
+
+console.log(findMissing([1, 15]));
