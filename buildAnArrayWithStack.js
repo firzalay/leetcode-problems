@@ -3,24 +3,25 @@
  * @param {number} n
  * @return {string[]}
  */
-
- 
-
 var buildArray = function (target, n) {
     let stack = [];
-    let current = 0; // 2,
+    let indexArr = 0;
 
-    for (let i = 1; i <= n && current < target.length; i++) {
-        if (target[current] == i) {
-            stack.push("Push");
-            current++;
-        } else {
-            stack.push("Push");
-            stack.push("Pop");
+    for (let i = 1; i <= n; i++) {
+        if (indexArr == target.length) {
+            return stack;
         }
-
+        
+        if (i == target[indexArr]) {
+            stack.push("Push")
+        } else {
+            indexArr++;
+            stack.push("Push")
+            stack.push("Pop")
+        }
     }
 
     return stack;
 };
 
+console.log(buildArray([1, 3], 3));
