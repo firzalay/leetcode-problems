@@ -20,13 +20,42 @@
 // };
 
 
-function twoSum(nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = 0; j < nums.length; j++) {
+// function twoSum(nums, target) {
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = 0; j < nums.length; j++) {
             
+//         }
+//     }    
+// }
+
+
+
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+    let map = new Map()
+    for (let i = 0; i < nums.length; i++) {
+        let n = nums[i]
+        let numTarget = target - n
+        
+        if (map.has(numTarget)) {
+            return [map.get(numTarget), i]
         }
-    }    
-}
+
+        map.set(n, i)
+
+
+    }
+
+    return map
+
+    
+};
+console.log(twoSum([2, 7, 11, 15], 9));
 
 
 
@@ -34,12 +63,6 @@ function twoSum(nums, target) {
 
 
 
-
-
-
-
-
-console.log(twoSum([2, 7, 11, 15], 13));
 
 
 

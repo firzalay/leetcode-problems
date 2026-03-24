@@ -15,9 +15,13 @@ var longestConsecutive = function (nums) {
                 startNum++;
                 currentStreak++;
             }
+
             longestStreak = Math.max(longestStreak, currentStreak);
+        
         }
     }
+
+
 
     return longestStreak;
 };
